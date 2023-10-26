@@ -1,0 +1,32 @@
+primary-color = #010717
+blue = rgba(0, 132, 255, .6)
+custom-gray = rgba(137, 147, 172, .6)
+main-indents = 0 15px
+mobile-media-query = "only screen and (max-width: 768px)"
+
+
+.scroll-lock-by-gantt
+  overflow hidden !important
+
+.chart-wrapper
+  position relative
+  padding 0 20px
+
+.chart-nav-button
+  position absolute
+  top 0
+  bottom 0
+  margin auto
+  width 40px
+  height 20px
+  z-index 999
+  background-image url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNy4zNDUuMjQ0TC4zNDkgNi4yNDFhMSAxIDAgMDAxLjMwMiAxLjUxOEM0LjgyOSA0Ljk0NSA2LjYxIDMuNDE3IDcgMy4xNzRjLjU4Mi0uMzYzIDEtLjY0IDIgMCAuNjY3LjQyNyAyLjQ1IDEuOTU1IDUuMzUgNC41ODVhMSAxIDAgMTAxLjMtMS41MThMOC42NTYuMjQ0YS45OTYuOTk2IDAgMDAtMS4zMSAweiIgZmlsbD0iIzAwODRGRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+")
+  background-repeat no-repeat
+  background-size contain
+  &__previous
+    left -35px
+    transform rotate(-90deg)
+  &__next
+    right -35px
+    -webkit-transform rotate(90deg)
+    transform rotate(90deg)
