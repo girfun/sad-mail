@@ -1,18 +1,17 @@
 <template>
   <div :class="[{'adaptiv-mail': viewType === 'adaptiveMail'}]">
-    <SedHeader/>
-    <ViewSwitcher @viewType="switchView"/>
-    <Header/>
-    <Responsible :view-type="viewType"/>
-    <Summary :view-type="viewType"/>
-    <LineChart  v-if="show" class="highcharts-layout-fix" :data="linechartData" @period-changed="onPeriodChanged"/>
-    <indicator-list :view-type="viewType"/>
+    <div @click="goBack" style="margin: 10px 0 0 38px">
+      Назад
+    </div>
+    <SummaryIndicator :view-type="viewType"/>
+    <LineChart v-if="show" class="highcharts-layout-fix" :data="linechartData" @period-changed="onPeriodChanged"/>
+<!--    <indicator-list :view-type="viewType"/>-->
   </div>
 </template>
 <script>
 import Header from "@/components/Header.vue";
 import Responsible from "@/components/Responsible.vue";
-import Summary from "@/components/Summary.vue";
+import SummaryIndicator from "@/components/SummaryIndicator.vue";
 import {defineComponent} from 'vue'
 import LineChart from "@/components/LineChart.vue";
 import ComponentsStyles from '@/styles/linechart.styl'
@@ -21,20 +20,20 @@ import SedHeader from "@/components/SedHeader.vue";
 import ViewSwitcher from "@/components/ViewSwitcher.vue";
 
 export default defineComponent({
-  name: "Index",
+  name: "Indicator",
   components: {
     ViewSwitcher,
     SedHeader,
     IndicatorList,
     Header,
     Responsible,
-    Summary,
+    SummaryIndicator,
     LineChart
   },
   data () {
     return {
       show: false,
-      viewType: 'simpleMail',
+      viewType: 'adaptiveMail',
       linechartData: {
         "units": "млрд.руб",
         "periods": [
@@ -1370,7 +1369,9 @@ export default defineComponent({
     }
   },
   mounted() {
-    this.show = true
+    setTimeout(() => {
+      this.show = true
+    }, 1000)
   },
   methods: {
     onPeriodChanged(period) {
@@ -1378,6 +1379,10 @@ export default defineComponent({
     },
     switchView (value) {
       this.viewType = value
+    },
+
+    goBack() {
+      this.$router.go(-1)
     }
   }
 })

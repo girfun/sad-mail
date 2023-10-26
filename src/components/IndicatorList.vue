@@ -321,7 +321,7 @@ export default defineComponent({
   
   methods: {
     onClickHandler() {
-      console.log('cl')
+      this.$router.push({path: '/indicator'})
     }
   }
 })

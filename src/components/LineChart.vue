@@ -411,12 +411,12 @@ export default {
       return styles;
     },
 
-    selectOptions() {
-      return this.periods.map(period => ({
-        title: period,
-        value: period
-      }));
-    }
+    // selectOptions() {
+      // return this.periods.map(period => ({
+      //   title: period,
+      //   value: period
+      // }));
+    // }
   },
 
   methods: {
@@ -678,7 +678,7 @@ export default {
             list[0].style.display = 'block';
           }
         }
-      })
+      }, {passive: true})
     },
 
     setCurrentChartDateType() {
