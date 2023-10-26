@@ -16,6 +16,7 @@
           :key="indicator.id"
           :indicator-data="indicator"
           :view-type="viewType"
+          @click="onClickHandler"
       />
     </div>
   </div>
@@ -315,6 +316,12 @@ export default defineComponent({
   props: {
     viewType: {
       type: String
+    }
+  },
+  
+  methods: {
+    onClickHandler() {
+      console.log('cl')
     }
   }
 })

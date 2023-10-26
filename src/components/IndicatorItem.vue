@@ -1,5 +1,30 @@
 <template>
-  <div class="indicator" :class="'color_' + indicatorData.color_type">
+  <div v-if="viewType === 'adaptiveMail'" class="indicator">
+    <div class="indicator__line" :class="'color_' + indicatorData.color_type"></div>
+
+    <div class="indicator__content">
+      <div class="indicator__author">
+        Зарпиов Э. А.
+      </div>
+      
+      <div
+          class="indicator__title"
+          :class="{'adaptive_indicator-title': viewType === 'adaptiveMail'}"
+      >
+        {{ indicatorData.title }}
+      </div>
+
+      <div class="indicator__values">
+        <div class="values_row plan" :class="{'adaptive_plan': viewType === 'adaptiveMail'}">
+          план <span> {{ indicatorData.plan }}</span>
+        </div>
+        <div class="values_row fact" :class="{'adaptive_fact': viewType === 'adaptiveMail'}">
+          факт <span> {{ indicatorData.fact }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-else class="indicator" :class="'color_' + indicatorData.color_type">
     <div class="indicator__title" :class="{'adaptive_indicator-title': viewType === 'adaptiveMail'}">{{ indicatorData.title }}</div>
     <div class="indicator__values">
       <div class="values_row plan" :class="{'adaptive_plan': viewType === 'adaptiveMail'}">

@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div :class="[{'adaptiv-mail': viewType === 'adaptiveMail'}]">
     <SedHeader/>
     <ViewSwitcher @viewType="switchView"/>
     <Header/>
     <Responsible :view-type="viewType"/>
     <Summary :view-type="viewType"/>
-<!--    <LineChart class="highcharts-layout-fix" :data="linechartData" @period-changed="onPeriodChanged"/>-->
+    <LineChart class="highcharts-layout-fix" :data="linechartData" @period-changed="onPeriodChanged"/>
     <indicator-list :view-type="viewType"/>
   </div>
 </template>

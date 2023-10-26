@@ -48,3 +48,73 @@ html, body
 .full-width
   width: 100% !important
   max-width: fill-available
+  
+  
+  
+// adaptive mail
+
+.adaptiv-mail
+  @media screen and (max-width: 576px)
+    .minister__data
+      .main-text,
+      .minister__text
+        font-size: 13px
+        
+    .summary__position
+      .graph__title
+        font-size: 14px!important
+      .label
+        font-size: 13px!important
+      .value
+        font-size: 14px!important
+        
+    .indicator__list-position
+      .header__switchers
+        font-size: 10px
+        
+      .indicators
+        grid-template-columns: repeat(1, 1fr)
+        padding-left: 0
+
+        .indicator
+          display: flex
+          flex-direction: row
+          justify-content: normal
+          gap: 4px
+          aspect-ratio: 0
+          padding: 0
+          background: rgba(0, 0, 0, .05)
+
+          .indicator__line
+            width: 4px
+            height: 100%
+        
+            border-top-left-radius: 2px
+            border-bottom-left-radius: 2px
+            
+          .indicator__content
+            width: 100%
+            
+            .indicator__author
+              color: rgba(0, 0, 0, .5)
+              margin: 5px 0 10px 
+            
+            .indicator__title
+              font-weight: normal
+              margin-bottom: 10px
+
+            .indicator__values
+              flex-direction: row
+              gap: 15px
+              margin-bottom: 5px
+              margin-right: 20px
+              float: right
+              
+            .values_row
+              flex-direction: column
+              font-size: 13px
+              color: #000000
+              
+              span
+                margin-top: 5px
+                font-size: 14px
