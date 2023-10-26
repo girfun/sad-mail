@@ -5,7 +5,7 @@
     <Header/>
     <Responsible :view-type="viewType"/>
     <Summary :view-type="viewType"/>
-<!--    <LineChart  v-if="show" class="highcharts-layout-fix" :data="linechartData" @period-changed="onPeriodChanged"/>-->
+    <LineChart class="highcharts-layout-fix" :data="linechartData" @period-changed="onPeriodChanged"/>
     <indicator-list :view-type="viewType"/>
   </div>
 </template>
@@ -33,7 +33,6 @@ export default defineComponent({
   },
   data () {
     return {
-      show: false,
       viewType: 'simpleMail',
       linechartData: {
         "units": "млрд.руб",
@@ -1368,9 +1367,6 @@ export default defineComponent({
         ]
       }
     }
-  },
-  mounted() {
-    this.show = true
   },
   methods: {
     onPeriodChanged(period) {
