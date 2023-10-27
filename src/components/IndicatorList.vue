@@ -321,7 +321,7 @@ export default defineComponent({
   
   methods: {
     onClickHandler() {
-      this.$router.push({path: '/indicator'})
+      this.$emit('on-click-indicator')
     }
   }
 })

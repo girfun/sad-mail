@@ -9,8 +9,17 @@
     <div class="summary__position">
       <img :src="IconGraph" alt="" class="graph">
     </div>
-    <indicator-list :view-type="viewType"/>
+    <indicator-list 
+        @on-click-indicator="onClickIndicator"
+        :view-type="viewType"
+    />
   </div>
+
+  <IndicatorPage
+      v-if="togglePage"
+      :class="['indicator-page', {'indicator-page--abs': togglePage}]"
+      @go-back="onClickIndicator"
+  />
 </template>
 <script>
 import Header from "@/components/Header.vue";
@@ -23,6 +32,7 @@ import IndicatorList from "@/components/IndicatorList.vue";
 import SedHeader from "@/components/SedHeader.vue";
 import ViewSwitcher from "@/components/ViewSwitcher.vue";
 import IconGraph from '@/assets/svg/icon_graph.svg'
+import IndicatorPage from '@/pages/Indicator'
 
 export default defineComponent({
   name: "Index",
@@ -33,10 +43,12 @@ export default defineComponent({
     Header,
     Responsible,
     Summary,
-    LineChart
+    LineChart,
+    IndicatorPage
   },
   data () {
     return {
+      togglePage: false,
       IconGraph,
       viewType: 'simpleMail',
       linechartData: {
@@ -1379,6 +1391,9 @@ export default defineComponent({
     },
     switchView (value) {
       this.viewType = value
+    },
+    onClickIndicator() {
+      this.togglePage = !this.togglePage
     }
   }
 })
@@ -1588,4 +1603,15 @@ export default defineComponent({
 
 .p-bottom-24
   padding-bottom: 24px
+  
+.indicator-page--abs
+  position: fixed
+  width: 100%
+  height: 100%
+  z-index: 2
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: #ffffff
 </style>

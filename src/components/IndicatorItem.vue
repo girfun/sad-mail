@@ -3,10 +3,6 @@
     <div class="indicator__line" :class="'color_' + indicatorData.color_type"></div>
 
     <div class="indicator__content">
-      <div class="indicator__author">
-        Зарпиов Э. А.
-      </div>
-      
       <div
           class="indicator__title"
           :class="{'adaptive_indicator-title': viewType === 'adaptiveMail'}"

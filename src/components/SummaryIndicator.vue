@@ -1,7 +1,7 @@
 <template>
   <div class="summary__position">
-    <div class="graph__title title-padding" :class="{'adaptive_graph-title': viewType === 'adaptiveMail'}">Задо Налог на прибыль организаций, млрд.руб</div>
-    <div class="graph__summary" :class="{'full-width': viewType === 'adaptiveMail'}">
+    <div class="graph__title title-padding" :class="{'adaptive_graph-title': viewType === 'adaptiveMail'}">Налог на прибыль</div>
+    <div class="graph__summary">
       <div class="graph__line">
         <div class="graph__labels-part">
           <img class="graph__icon" :class="{'adaptive_icon': viewType === 'adaptiveMail'}" :src="iconPlan" alt="">
