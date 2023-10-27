@@ -5,7 +5,10 @@
     <Header/>
     <Responsible :view-type="viewType"/>
     <Summary :view-type="viewType"/>
-    <LineChart class="highcharts-layout-fix" :data="linechartData" @period-changed="onPeriodChanged"/>
+<!--    <LineChart class="highcharts-layout-fix" :data="linechartData" @period-changed="onPeriodChanged"/>-->
+    <div class="summary__position">
+      <img :src="IconGraph" alt="" class="graph">
+    </div>
     <indicator-list :view-type="viewType"/>
   </div>
 </template>
@@ -19,6 +22,7 @@ import ComponentsStyles from '@/styles/linechart.styl'
 import IndicatorList from "@/components/IndicatorList.vue";
 import SedHeader from "@/components/SedHeader.vue";
 import ViewSwitcher from "@/components/ViewSwitcher.vue";
+import IconGraph from '@/assets/svg/icon_graph.svg'
 
 export default defineComponent({
   name: "Index",
@@ -33,6 +37,7 @@ export default defineComponent({
   },
   data () {
     return {
+      IconGraph,
       viewType: 'simpleMail',
       linechartData: {
         "units": "млрд.руб",
