@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="text-center sed sed__header">
-      № 16658
+      <img
+          src="@/assets/svg/image4.jpg" alt=""
+          style="width: 100%"
+          @click="goBack"
+      >
     </div>
     <div class="sed sed__subheader">На рассмотрении</div>
     <div class="sed__info">
@@ -26,6 +30,11 @@ export default defineComponent({
       iconDocument,
       iconExpandButton
     }
+  },
+  methods: {
+    goBack () {
+      this.$router.go(-1)
+    }
   }
 })
 </script>
@@ -36,7 +45,6 @@ export default defineComponent({
   font-weight: 600
   &__header
     font-size: 16px
-    padding: 10px
     font-weight: 500
   &__subheader
     font-size: 22px
