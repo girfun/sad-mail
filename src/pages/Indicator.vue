@@ -3,6 +3,9 @@
     <div @click="goBack" style="margin: 10px 0 0 38px">
       Назад
     </div>
+    <ViewSwitcher @viewType="switchView"/>
+    <Header/>
+    <Responsible :view-type="viewType"/>
     <SummaryIndicator :view-type="viewType"/>
     <div class="summary__position">
       <img :src="IconGraph" alt="" class="graph">

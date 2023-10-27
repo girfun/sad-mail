@@ -1,5 +1,5 @@
 <template>
-  <div :class="[{'adaptiv-mail': viewType === 'adaptiveMail'}]">
+  <div :class="[{'adaptiv-mail': viewType === 'adaptiveMail', 'overflow': togglePage}]">
     <SedHeader/>
     <ViewSwitcher @viewType="switchView"/>
     <Header/>
@@ -1605,6 +1605,7 @@ export default defineComponent({
   padding-bottom: 24px
   
 .indicator-page--abs
+  overflow-y: scroll
   position: fixed
   width: 100%
   height: 100%
@@ -1614,4 +1615,7 @@ export default defineComponent({
   right: 0
   bottom: 0
   background: #ffffff
+  
+.overflow 
+  overflow: hidden
 </style>
