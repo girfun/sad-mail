@@ -1,11 +1,6 @@
 <template>
   <div :class="[{'adaptiv-mail': viewType === 'adaptiveMail'}]">
-    <div @click="goBack" style="margin: 10px 0 0 38px">
-      <img
-          src="@/assets/svg/image4.jpg" alt=""
-          style="width: 100%"
-      >
-    </div>
+    <SedHeader/>
     <ViewSwitcher @viewType="switchView"/>
     <Header/>
     <Responsible :view-type="viewType"/>
